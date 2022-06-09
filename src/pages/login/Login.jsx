@@ -37,8 +37,8 @@ import TopNav from "../../components/topNav/topNav";
       margin: "8px 0px",
     };
     const btnStyle = {
-      backgroundColor: "#F9842C",
-      //backgroundColor: "#3D426B",
+     // backgroundColor: "#F9842C",
+      backgroundColor: "#3D426B",
       margin: "6px 0px",
       color:"#FFFF",
     };
@@ -72,7 +72,7 @@ import TopNav from "../../components/topNav/topNav";
             <Avatar style={avatarStyle}>
               <LoginIcon />
             </Avatar>
-            <h1>Login</h1>
+            
           </Grid>
           <Grid style={textStyle}>
             <Formik
