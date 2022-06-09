@@ -73,7 +73,7 @@ import TopNav from "../../components/topNav/topNav";
               <LoginIcon />
              
             </Avatar>
-            
+            <h1>Login</h1>
           </Grid>
           <Grid style={textStyle}>
             <Formik
