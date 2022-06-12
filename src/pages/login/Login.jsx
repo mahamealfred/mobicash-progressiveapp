@@ -87,16 +87,19 @@ import TopNav from "../../components/topNav/topNav";
                     label="Email"
                     name="email"
                     placeholder="Enter email"
+                    variant="standard"
                     fullWidth
                     required
                     helperText={<ErrorMessage name="email" />}
                   />
+                 
                   <Field
                     as={TextField}
                     label="Password"
                     name="password"
                     placeholder="Enter password"
                     type="password"
+                    variant="standard"
                     fullWidth
                     required
                     helperText={<ErrorMessage name="password" />}
