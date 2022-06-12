@@ -61,7 +61,7 @@ const Header= () => {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" minWidth="sm">
         <Toolbar disableGutters>
           <HomeIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography

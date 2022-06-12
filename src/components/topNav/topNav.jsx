@@ -34,7 +34,7 @@ const TopNav = () => {
 
   return (
     <React.Fragment>
-      <AppBar sx={{position:"sticky",top:"0",Zindex:"999", background: "#ffff" }} >
+      <AppBar sx={{position:"sticky",top:"0",Zindex:"999", background: "#ffff" }} maxWidth="xl">
       
         <Toolbar>
               <Typography sx={{ fontSize: "2rem", paddingLeft: "5%", backgroundColor:'#ffff',color:'#3D426B' }}>

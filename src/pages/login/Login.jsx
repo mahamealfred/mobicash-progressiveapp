@@ -30,7 +30,8 @@ import TopNav from "../../components/topNav/topNav";
       padding: 20,
       height: "60vh",
       width: 280,
-      margin: "auto auto",
+      margin: "20px auto",
+     
     };
     const avatarStyle = {
       backgroundColor: "#3D426B",
@@ -67,7 +68,7 @@ import TopNav from "../../components/topNav/topNav";
     return (
       <Grid>
       <TopNav/>
-        <Paper elevation={10} style={paperStyle}>
+        <Paper elevation={4} style={paperStyle}>
           <Grid align="center">
             <Avatar style={avatarStyle}>
               <LoginIcon />
