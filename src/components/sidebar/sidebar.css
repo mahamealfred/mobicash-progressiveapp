@@ -7,3 +7,24 @@
     top: 50px;
     border-radius: 5px;
 }
+/* @media screen and (min-width: 769px) {
+    .sidebar{
+        flex: 0.4;
+        
+    }
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) { 
+    
+    .sidebar{
+        flex: 0.5;
+        
+    }
+}
+
+@media only screen and (max-device-width: 480px) {
+    .sidebar{
+        flex: 0.6;
+        
+    }
+} */
