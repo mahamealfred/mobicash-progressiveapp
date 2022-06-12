@@ -30,7 +30,7 @@ import TopNav from "../../components/topNav/topNav";
       padding: 20,
       height: "60vh",
       width: 280,
-      margin: "20px auto",
+      margin: "auto auto",
     };
     const avatarStyle = {
       backgroundColor: "#3D426B",
