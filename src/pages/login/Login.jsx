@@ -28,9 +28,9 @@ import TopNav from "../../components/topNav/topNav";
   
     const paperStyle = {
       padding: 20,
-      height: "55vh",
-      width: 300,
-      margin: "80px auto",
+      height: "60vh",
+      width: 280,
+      margin: "20px auto",
     };
     const avatarStyle = {
       backgroundColor: "#3D426B",
