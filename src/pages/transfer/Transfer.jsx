@@ -12,15 +12,83 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import DialogTitle from "@mui/material/DialogTitle";
+import jsPDF from "jspdf";
+import logo from "../../images/logo.png";
+import  "jspdf-autotable";
 import {
   ButtonGroup,
  Stack
   
 } from "@mui/material";
 
+const data=[
+  {
+    "collectionDate":"12-12-2021",
+    "amount":12000,
+    "service":"CBI",
+    "bank_reference":125353663763,
+    "mobicash_reference":1224255252
 
+}
+]
 
 function Transfer() {
+
+  const todaydate=new Date().toISOString().slice(0,10);
+  const generatePdf= () => {
+    const doc = new jsPDF();
+    doc.addImage(logo, "JPEG", 20, 10, 50, 20);
+    doc.setFont("Helvertica", "normal");
+    doc.text("Mobicash Ltd", 20, 50);
+    doc.text("Company Name: Mobicash", 20, 55);
+    doc.text("Email: mobicash@reb.rw", 20, 60);
+    doc.setFont("Helvertica", "normal");
+    doc.text(`Date ${todaydate}`, 140, 65);
+    doc.setFont("Helvertica", "bold");
+    doc.text("List of Approved Transfer Report", 70, 75);
+    const tableColumn = [
+      "Collection Date",
+      "Service",
+      "Amount",
+      "Bank Referance",
+      "Mobicash Referance"
+    ];
+    const tableRows = [];
+
+    data.map((d) => {
+
+      const Data = [
+        d.collectionDate,
+        d.service,
+        d.amount,
+        d.bank_reference,
+        d.mobicash_reference,
+        
+        // format(new Date(student.updated_at), "yyyy-MM-dd")
+      ];
+      tableRows.push(Data);
+      
+    });
+
+    doc.autoTable(tableColumn, tableRows, {
+      startY: 80,
+      theme: "striped",
+      margin: 10,
+      styles: {
+        font: "courier",
+        fontSize: 12,
+        overflow: "linebreak",
+        cellPadding: 3,
+        halign: "center",
+      },
+      head: [tableColumn],
+      body: [tableRows],
+    });
+    const date = Date().split(" ");
+    const dateStr = date[0] + date[1] + date[2] + date[3] + date[4];
+
+    doc.save(`report_${dateStr}.pdf`);
+  };
  
   return (
     <>
@@ -34,7 +102,7 @@ function Transfer() {
                 <div className="datecontent">
                   <Stack component="form" noValidate spacing={3}>
                   <ButtonGroup variant="text" aria-label="text button group">
-                <Button>Generate PDF</Button>
+                <Button onClick={generatePdf}>Generate PDF</Button>
                 <Button>Generate CSV</Button>
               </ButtonGroup>
                   </Stack>

@@ -13,6 +13,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import DialogTitle from "@mui/material/DialogTitle";
+import * as XLSX from "xlsx";
 import {
   ButtonGroup,
  Stack
@@ -24,10 +25,10 @@ function Home() {
   const [selectedFile, setSelectedFile] = useState();
 
   const uploadFile = async () => {
-    const formData = new FormData();
-    formData.append("file", selectedFile);
-    setSelectedFile(formData);
-    // await dispatch(uploadFileAction(formData));
+    
+
+console.log("file name",selectedFile.name) 
+
   };
   const changeHandler = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -57,10 +58,11 @@ function Home() {
             ) : (
               <p></p>
             )}
-            <Button variant="contained" component="span">
+            </label>
+            <Button variant="contained" component="span" onClick={uploadFile}>
               Upload
             </Button>
-          </label>
+        
         </Box>
         <div className="tableDisplay">
           <DialogTitle>DATA FROM UPLOADED FILE</DialogTitle>
@@ -83,7 +85,8 @@ function Home() {
                   <TableCell>DATE</TableCell>
                   <TableCell align="center">SERVICE</TableCell>
                   <TableCell align="center">AMOUNT</TableCell>
-                  <TableCell align="center">BANK TRANSACTION</TableCell>
+                  <TableCell align="center">MOBICASH REFERANCE</TableCell>
+                  <TableCell align="center">BANK REFERANCE</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -92,9 +95,10 @@ function Home() {
                     {/* {moment(row.collection_date).format("DD/MM/YYYY")} */}
                     12/107/2022
                   </TableCell>
-                  <TableCell align="center">service</TableCell>
-                  <TableCell align="center">800000</TableCell>
+                  <TableCell align="center">CBHI</TableCell>
+                  <TableCell align="center">800000 Rwf</TableCell>
                   <TableCell align="center">12837363636</TableCell>
+                  <TableCell align="center">22835262782</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
